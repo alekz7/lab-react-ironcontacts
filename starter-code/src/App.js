@@ -15,24 +15,33 @@ class App extends Component {
   }
 
   AddRandom(){
-    alert("Agregando aleatorioamente");
-    console.log("Agregando aleatorioamente");
-    const newData = contacts.splice(0, 8);
+    const newData = this.state.data;
+
+    // newData.push(contacts.splice(5,1,1));
+
     this.setState({ data: newData });
   }
 
   SortByName(){
-    alert("Sort by name");
-    console.log("Sort by name");
-    const newData = contacts.splice(0, 8);
-    this.setState({ data: newData });
+    const byName = this.state.data;
+
+    byName.sort(function(a,b) {
+      var x = a.name.toLowerCase();
+      var y = b.name.toLowerCase();
+      return x < y ? -1 : x > y ? 1 : 0;
+    });
+
+    this.setState({ data: byName });
   }
 
   SortByPopularity(){
-    alert("Sort by popularity");
-    console.log("Sort by popularity");
-    const newData = contacts.splice(0, 8);
-    this.setState({ data: newData });
+    const byPopularity = this.state.data;
+
+    byPopularity.sort(function(a,b) {
+      return a.popularity - b.popularity;
+    });
+
+    this.setState({ data: byPopularity });
   }
 
   render() {
