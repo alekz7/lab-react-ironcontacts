@@ -1,15 +1,8 @@
 import React, { Component } from 'react';
 import 'bulma/css/bulma.css';
-import contacts from './contacts.json';
 import Celda from './Celda';
 
 class Table extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      data: contacts.splice(0,5),
-    }
-  }
 
   render() {
     return (
@@ -35,9 +28,9 @@ class Table extends Component {
   pintaCelda(i) {
     return (
       <Celda
-        picture={this.state.data[i].picture}
-        name={this.state.data[i].name}
-        popularity={this.state.data[i].popularity}
+        picture={this.props.data[i].picture}
+        name={this.props.data[i].name}
+        popularity={this.props.data[i].popularity}
       />
     );
   }
