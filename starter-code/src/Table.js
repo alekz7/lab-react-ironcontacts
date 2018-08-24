@@ -4,6 +4,10 @@ import Celda from './Celda';
 
 class Table extends Component {
 
+  handleClick(){
+    
+  }
+
   render() {
     return (
       <table className="table">
@@ -15,23 +19,11 @@ class Table extends Component {
           </tr>
         </thead>
         <tbody>
-          {this.pintaCelda(0)}
-          {this.pintaCelda(1)}
-          {this.pintaCelda(2)}
-          {this.pintaCelda(3)}
-          {this.pintaCelda(4)}
+          {this.props.data.map((celebrity, i) =>{
+            return <Celda {...celebrity} index={i} handleClick={this.handleClick}/>
+          })}
         </tbody>
       </table>
-    );
-  }
-
-  pintaCelda(i) {
-    return (
-      <Celda
-        picture={this.props.data[i].picture}
-        name={this.props.data[i].name}
-        popularity={this.props.data[i].popularity}
-      />
     );
   }
 }

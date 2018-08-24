@@ -6,8 +6,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 library.add(faTrashAlt);
 
-class Celda extends Component {
-  render() {
+class Celda extends Component {  
+
+  render(index) {
     return (
       <tr>
         <th>
@@ -20,10 +21,11 @@ class Celda extends Component {
         <th>
           <div className="field is-grouped">
             <p className="control">
-              <a className="bd-tw-button button is-danger" data-social-network="Twitter" data-social-action="tweet" data-social-target="http://localhost:4000" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=http://localhost:4000&amp;via=jgthms">
+              <button className="bd-tw-button button is-danger"
+                  data-social-target="http://localhost:4000">
                 <span className="icon"> <FontAwesomeIcon icon="trash-alt" /> </span>
                 <span> Delete </span>
-              </a>
+              </button>
             </p>
           </div>
         </th>

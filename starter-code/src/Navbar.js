@@ -9,7 +9,7 @@ class Navbar extends Component {
     return (
       <nav className="navbar is-black">
         <div className="navbar-brand">
-          <a className="navbar-item" href="https://bulma.io">
+          <a className="navbar-item" href="#">
             <img src={logo} className="App-logo" alt="logo" />
           </a>
           <div className="navbar-burger burger" data-target="navbarExampleTransparentExample">

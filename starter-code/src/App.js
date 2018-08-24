@@ -24,23 +24,19 @@ class App extends Component {
 
   SortByName(){
     const byName = this.state.data;
-
     byName.sort(function(a,b) {
       var x = a.name.toLowerCase();
       var y = b.name.toLowerCase();
       return x < y ? -1 : x > y ? 1 : 0;
     });
-
     this.setState({ data: byName });
   }
 
   SortByPopularity(){
     const byPopularity = this.state.data;
-
     byPopularity.sort(function(a,b) {
       return a.popularity - b.popularity;
     });
-
     this.setState({ data: byPopularity });
   }
 
