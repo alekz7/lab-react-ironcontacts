@@ -10,16 +10,29 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: contacts.splice(0, 5),
+      data: contacts,
     };
   }
 
-  AddRandom(){
-    const newData = this.state.data;
+  DeleteOne(cual){    
+    var oldData = this.state.data;
+    var oldData = oldData.splice(cual,1);
+    this.setState({
+      oldData,
+    })
+  }
 
-    // newData.push(contacts.splice(5,1,1));
+  AddRandom(){    
+    this.setState({
+      data: [            
+        ...this.state.data,
+        this.getObjetoRandom(contacts)
+      ]
+    })
+  }
 
-    this.setState({ data: newData });
+  getObjetoRandom(data){    
+    return this.state.data[Math.floor(Math.random() * this.state.data.length)];
   }
 
   SortByName(){
@@ -53,7 +66,10 @@ class App extends Component {
           </Navbar>
         <div className="columns">
           <div className="column is-half is-offset-one-quarter">
-            <Table data={this.state.data}></Table>
+            <Table 
+              data={this.state.data}
+              deleteOne       = {this.DeleteOne.bind(this)}>
+            </Table>
           </div>
         </div>
       </div>

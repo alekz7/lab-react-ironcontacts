@@ -21,8 +21,9 @@ class Celda extends Component {
         <th>
           <div className="field is-grouped">
             <p className="control">
-              <button className="bd-tw-button button is-danger"
-                  data-social-target="http://localhost:4000">
+              <button 
+                  className="bd-tw-button button is-danger"                  
+                  onClick={() => this.props.accion(this.props.index)}>
                 <span className="icon"> <FontAwesomeIcon icon="trash-alt" /> </span>
                 <span> Delete </span>
               </button>

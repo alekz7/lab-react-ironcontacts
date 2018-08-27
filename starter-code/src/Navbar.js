@@ -23,7 +23,7 @@ class Navbar extends Component {
           <div className="navbar-start">
             <NavItem accion={this.props.addRandom}        description="Add Random Contact"/>
             <NavItem accion={this.props.sortByName}       description="Sort by name"/>
-            <NavItem accion={this.props.sortByPopularity} description="Sort by popularity"/>
+            <NavItem accion={this.props.sortByPopularity} description="Sort by popularity"/>            
           </div>
         </div>
       </nav>

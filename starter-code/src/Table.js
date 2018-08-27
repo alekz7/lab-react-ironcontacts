@@ -3,10 +3,12 @@ import 'bulma/css/bulma.css';
 import Celda from './Celda';
 
 class Table extends Component {
-
-  handleClick(){
-    
-  }
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: this.props.data.splice(0,5),
+    };
+  }   
 
   render() {
     return (
@@ -20,7 +22,7 @@ class Table extends Component {
         </thead>
         <tbody>
           {this.props.data.map((celebrity, i) =>{
-            return <Celda {...celebrity} index={i} handleClick={this.handleClick}/>
+            return <Celda {...celebrity} index={i} accion={this.props.deleteOne}/>
           })}
         </tbody>
       </table>
